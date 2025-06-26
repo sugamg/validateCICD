@@ -5,7 +5,7 @@
 
 trigger:
   branches: # Branch names to include or exclude for triggering a run.
-    include: [ string ] # List of items to include.
+    include:
     - '*'
 pool:
   vmImage: ubuntu-latest
