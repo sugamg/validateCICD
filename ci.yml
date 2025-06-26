@@ -10,7 +10,7 @@ trigger:
     #- refs/tags/*
   tags:
     include:
-    - R2
+    - R2.*
 pool:
   vmImage: ubuntu-latest
 
