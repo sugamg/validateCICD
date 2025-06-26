@@ -6,10 +6,10 @@
 trigger:
   branches: # Branch names to include or exclude for triggering a run.
     include: [ string ] # List of items to include.
-      - '*'
+    - '*'
   tags: # Tag names to include or exclude for triggering a run.
     include: [ string ] # List of items to include
-      - '*'
+    - '*'
 
 
 pool:
