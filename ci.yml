@@ -7,8 +7,7 @@ trigger:
   branches: # Branch names to include or exclude for triggering a run.
     include:
     - '*'
-    tags:
-    - '*'
+    - refs/tags/*
 pool:
   vmImage: ubuntu-latest
 
