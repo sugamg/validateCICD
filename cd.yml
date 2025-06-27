@@ -17,7 +17,6 @@ resources:
 
 stages:
   - stage: deploy
-    #condition: and(succeeded(), ne(variables['resources.pipeline.ci-pipeline.reason'], 'PullRequest'))
     jobs:
       - job: deployJob
         steps:
