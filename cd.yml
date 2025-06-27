@@ -7,6 +7,7 @@ resources:
       trigger: 
         branches: # Branch names to include or exclude for triggering a run.
           include:
+          - main
           - release*
           - refs/tags/R2.*
           exclude:
@@ -16,7 +17,6 @@ resources:
 
 stages:
   - stage: deploy
-    #condition: and(succeeded(), ne(variables['resources.pipeline.ci-pipeline.reason'], 'PullRequest'))
     jobs:
       - job: deployJob
         steps:
