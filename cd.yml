@@ -1,8 +1,3 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
 trigger: none  
 
 resources:
@@ -10,8 +5,11 @@ resources:
     - pipeline: ci-pipeline
       source: ci-pipeline
       trigger: true
-        
-jobs:
-  - job: dependentJob
-    steps:
-      - script: echo "Pipeline A completed successfully, now running Pipeline B"
+
+stages:
+  - stage: deploy
+    condition: and(succeeded(), ne(variables['resources.pipeline.ci-pipeline.reason'], 'PullRequest'))
+    jobs:
+      - job: deployJob
+        steps:
+          - script: echo "Deploying since CI was not triggered by a PR"
