@@ -11,13 +11,14 @@ trigger:
   tags:
     include:
     - R2.*
-pool:
-  vmImage: ubuntu-latest
 
 pr:
   branches:
     include:
       - '*'
+
+pool:
+  vmImage: ubuntu-latest
 
 steps:
 - script: echo Hello, world!
